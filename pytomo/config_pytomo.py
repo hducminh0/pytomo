@@ -13,14 +13,14 @@ USE_PACKAGE_DIR = False
 
 # execute crawl without prompting user for any parameters
 # put to True if you are running jobs automatically
-BATCH_MODE = False
+BATCH_MODE = True
 
 #PROVIDER = None
 PROVIDER = ''
 
 RESULT_DIR = 'results'
-# RESULT_FILE = None
-RESULT_FILE = 'pytomo.result'
+RESULT_FILE = None
+# RESULT_FILE = 'pytomo.result'
 
 DATABASE_DIR = 'databases'
 DATABASE = 'pytomo_database.db'
@@ -54,7 +54,7 @@ RELATED = False
 # Image file to save the graphs
 PLOT = False
  # List containig the column names to be plotted
-COLUMN_NAMES = ['DownloadBytes', 'MaxInstantThp']
+COLUMN_NAMES = ['PingMin', 'PingAvg']
 # Choose from  [ PingMin , PingAvg , PingMax , DownloadTime, VideoDuration
 # VideoLength, EncodingRate, DownloadBytes, DownloadInterruptions,
 # BufferingDuration, PlaybackDuration, BufferDurationAtEnd, MaxInstantThp]
@@ -88,7 +88,8 @@ STD_HEADERS = {
 ################################################################################
 # for start_pytomo.py
 
-STATIC_URL_LIST = []
+STATIC_URL_LIST = ['https://www.youtube.com/watch?v=XVDDNPECXUg','https://www.youtube.com/watch?v=H8jvsOMT7iM','https://www.youtube.com/watch?v=mflbGLhF6Jc','https://www.youtube.com/watch?v=MjwYmFcqeEs','https://www.youtube.com/watch?v=HwcMd87l5dA','https://www.youtube.com/watch?v=gDLDHclCPyY','https://www.youtube.com/watch?v=a_GgHBmn6Vo','https://www.youtube.com/watch?v=M7P-pHXImzw','https://www.youtube.com/watch?v=WMQwTvtH4PA','https://www.youtube.com/watch?v=0fRxkEXdjFM','https://www.youtube.com/watch?v=13KM4xVpYdk','https://www.youtube.com/watch?v=JmjQU2lGho0','https://www.youtube.com/watch?v=2OghItgq7MA','https://www.youtube.com/watch?v=wl06MmVLbEI','https://www.youtube.com/watch?v=rPtF1Axbin4','https://www.youtube.com/watch?v=3B_ipknA8yo','https://www.youtube.com/watch?v=1IJwpFBmTGk','https://www.youtube.com/watch?v=bz01OfBZVnw','https://www.youtube.com/watch?v=yQDT90JQo7k','https://www.youtube.com/watch?v=eHPr0CTvCno','https://www.youtube.com/watch?v=VPlh_Wmj4JE','https://www.youtube.com/watch?v=7q1J9HtD8kQ','https://www.youtube.com/watch?v=I834kIKFaEM','https://www.youtube.com/watch?v=td1UJdE72rw','https://www.youtube.com/watch?v=cSU9orAWybo','https://www.youtube.com/watch?v=dx7LH6i_xlc','https://www.youtube.com/watch?v=NRUw4oDRYfg','https://www.youtube.com/watch?v=jGcXX53bYG8','https://www.youtube.com/watch?v=DWz9_kvCugQ','https://www.youtube.com/watch?v=c7x378mNkWk','https://www.youtube.com/watch?v=i27q0emhbEM','https://www.youtube.com/watch?v=gHjR7vF_r4Q','https://www.youtube.com/watch?v=Sk4X2KWjZnY','https://www.youtube.com/watch?v=7jLCE_kuwCg','https://www.youtube.com/watch?v=KYS3RlWybS0','https://www.youtube.com/watch?v=msn14SM5MME','https://www.youtube.com/watch?v=j9m2RFY1Fm4','https://www.youtube.com/watch?v=U4xBcgttsGk','https://www.youtube.com/watch?v=nXv8rxStdlc','https://www.youtube.com/watch?v=-lQfy73R4_0','https://www.youtube.com/watch?v=DXUAyRRkI6k','https://www.youtube.com/watch?v=oflCcjxYmqw','https://www.youtube.com/watch?v=XEDWaBmKpfY','https://www.youtube.com/watch?v=y5iIRi3galM','https://www.youtube.com/watch?v=RRKJiM9Njr8','https://www.youtube.com/watch?v=5TuyvWoaAZk','https://www.youtube.com/watch?v=a69toGGjoO0','https://www.youtube.com/watch?v=4iRJDDjejCI','https://www.youtube.com/watch?v=TcMBFSGVi1c','https://www.youtube.com/watch?v=cY9kbO4GY_s']
+
 INPUT_FILE = None
 
 # Max number of rounds to perform
@@ -133,10 +134,12 @@ PROXIES = None
 # other DNS servers to query
 GOOGLE_PUBLIC_DNS = ('google_public_dns', '8.8.8.8')
 OPEN_DNS = ('open_dns', '208.67.220.220')
+CLOUDFLARE = ('cloudflare', '1.1.1.1')
+
 # The lifetime of a DNS query(in seconds). The default is 30 seconds.
 DNS_TIMEOUT = 4.0
-EXTRA_NAME_SERVERS = [GOOGLE_PUBLIC_DNS, OPEN_DNS]
-#EXTRA_NAME_SERVERS = []
+EXTRA_NAME_SERVERS = [CLOUDFLARE, GOOGLE_PUBLIC_DNS, OPEN_DNS]
+
 # also download video from IPs resolved by other DNS servers
 DOWNLOAD_FROM_EXTRA_IPS = False
 

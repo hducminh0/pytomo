@@ -27,11 +27,13 @@
 
 from os.path import abspath
 from sys import path
+import time 
 
 # assumes the standard distribution paths
 PACKAGE_NAME = 'pytomo'
 PACKAGE_DIR = abspath(path[0])
 
+start = time.time()
 if PACKAGE_DIR not in path:
     path[0:0] = [PACKAGE_DIR]
 
@@ -45,3 +47,6 @@ except ImportError:
 
 if __name__ == '__main__':
     pytomo.start_pytomo.main(version=version)
+end = time.time()
+
+print(end - start)
