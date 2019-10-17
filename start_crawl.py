@@ -49,4 +49,4 @@ if __name__ == '__main__':
     pytomo.start_pytomo.main(version=version)
 end = time.time()
 
-print(end - start)
+print((end - start)/60)
